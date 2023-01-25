@@ -3,7 +3,11 @@ import { createApp } from "vue";
 const app = createApp({});
 
 app.component('example-component', require('./components/ExampleComponent.vue').default);
-app.component('login-component', require('./components/LoginComponent.vue').default);
+// app.component('login-component', require('./components/start/LoginComponent.vue').default);
+
+
+const files = require.context('./components/start', true, /\.vue$/i)
+files.keys().map(key => app.component(key.split('/').pop().split('.')[0], files(key).default))
 
 app.mount('#app')
 

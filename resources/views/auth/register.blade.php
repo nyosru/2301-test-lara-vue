@@ -8,6 +8,13 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
+
+                    555
+
+                    <reg-component></reg-component>
+
+                    333
+
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 

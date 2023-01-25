@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,10 @@ Route::middleware('auth')->group(function () {
     Route::get('page1', function () {
         return view('page1');
     });
+});
+
+Route::prefix('user')->group(function () {
+    Route::get('reg', [UserController::class, 'reg']);
 });
 
 Route::get('/', function () {

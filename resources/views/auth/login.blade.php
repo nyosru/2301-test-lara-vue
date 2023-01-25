@@ -13,7 +13,8 @@
 
 
                     11
-                    <example-component></example-component>
+                    {{-- <example-component></example-component> --}}
+                    <login-component></login-component>
                     22
                     
 
