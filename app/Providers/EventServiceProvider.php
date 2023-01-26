@@ -11,14 +11,14 @@ class EventServiceProvider extends ServiceProvider
 {
 
     /**
- * Определить, должны ли автоматически обнаруживаться события и слушатели.
- *
- * @return bool
- */
-public function shouldDiscoverEvents()
-{
-    return true;
-}
+     * Определить, должны ли автоматически обнаруживаться события и слушатели.
+     *
+     * @return bool
+     */
+    public function shouldDiscoverEvents()
+    {
+        return true;
+    }
 
 
     /**
@@ -27,12 +27,12 @@ public function shouldDiscoverEvents()
      * @var array<class-string, array<int, class-string>>
      */
     protected $listen = [
-        // Registered::class => [
-        //     SendEmailVerificationNotification::class,
-        // ],
-        'Illuminate\Auth\Events\Login'=> [
+        Registered::class => [
+            SendEmailVerificationNotification::class,
+        ],
+        'Illuminate\Auth\Events\Login' => [
             'App\Listeners\WriteLogLoginNotification',
-                ],
+        ],
     ];
 
     /**

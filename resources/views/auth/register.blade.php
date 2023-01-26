@@ -1,19 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
+
+    <reg-component></reg-component>
+
+    @if( 1 == 2 )
     <div class="row justify-content-center">
         <div class="col-md-8">
+
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-
-                    555
-
-                    <reg-component></reg-component>
-
-                    333
 
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -80,5 +80,7 @@
             </div>
         </div>
     </div>
+    @endif
+
 </div>
 @endsection

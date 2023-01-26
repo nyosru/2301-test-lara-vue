@@ -1,9 +1,8 @@
 <template>
-  <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card">
-          <div class="card-header">Example Component</div>
+          <div class="card-header">Форма регистрации</div>
           <div class="card-body">
             <div v-if="resOk"
             class="alert alert-success p-3 mb-1" >Регистрация проведена успешно</div>
@@ -42,7 +41,7 @@
                       <sup class="text-danger">*</sup>
                     </div>
                     <div class="col-8">
-                      <input type="text" v-model.trim="name" required />
+                      <input type="text" v-model.trim="name" class="form-control" required />
                     </div>
                   </div>
                   <div class="row">
@@ -51,7 +50,7 @@
                       <sup class="text-danger">*</sup>
                     </div>
                     <div class="col-8">
-                      <input type="text" v-model.trim="family" required />
+                      <input type="text" v-model.trim="family" class="form-control" required />
                     </div>
                   </div>
                   <div class="row">
@@ -60,16 +59,7 @@
                       <sup class="text-danger">*</sup>
                     </div>
                     <div class="col-8">
-                      <input type="email" v-model="email" required />
-
-                      <transition>
-                        <div
-                          v-if="resError.length > 0"
-                          class="alert alert-warning p-3 mb-1"
-                        >
-                          {{ resError }}
-                        </div>
-                      </transition>
+                      <input type="email" v-model="email" class="form-control" required />
                     </div>
                   </div>
                   <div class="row">
@@ -78,7 +68,7 @@
                       <sup class="text-danger">*</sup>
                     </div>
                     <div class="col-8">
-                      <input type="password" v-model="password" required />
+                      <input type="password" v-model="password" class="form-control" required />
                     </div>
                   </div>
                   <div class="row">
@@ -90,6 +80,7 @@
                       <input
                         type="password"
                         v-model="password_confirmation"
+                        class="form-control" 
                         required
                       />
                     </div>
@@ -112,7 +103,7 @@
         </div>
       </div>
     </div>
-  </div>
+
 </template>
 
 <script setup>
