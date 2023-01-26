@@ -12,10 +12,9 @@
                 <div class="card-body">
 
 
-                    11
-                    {{-- <example-component></example-component> --}}
-                    <login-component></login-component>
-                    22
+                
+                    {{-- <login-component></login-component> --}}
+                
                     
 
                     <form method="POST" action="{{ route('login') }}">

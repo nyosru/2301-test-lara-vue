@@ -9,15 +9,30 @@ use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
+
+    /**
+ * Определить, должны ли автоматически обнаруживаться события и слушатели.
+ *
+ * @return bool
+ */
+public function shouldDiscoverEvents()
+{
+    return true;
+}
+
+
     /**
      * The event listener mappings for the application.
      *
      * @var array<class-string, array<int, class-string>>
      */
     protected $listen = [
-        Registered::class => [
-            SendEmailVerificationNotification::class,
-        ],
+        // Registered::class => [
+        //     SendEmailVerificationNotification::class,
+        // ],
+        'Illuminate\Auth\Events\Login'=> [
+            'App\Listeners\WriteLogLoginNotification',
+                ],
     ];
 
     /**

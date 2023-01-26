@@ -14,20 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// что внутри только для авторизованных
 Route::middleware('auth')->group(function () {
     Route::get('page1', function () {
         return view('page1');
     });
 });
 
-Route::prefix('user')->group(function () {
-    Route::get('reg', [UserController::class, 'reg']);
-});
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// первая страничка и любой другой неопределённый путь
+Route::fallback(function () {
+    return view('welcome');
+});
